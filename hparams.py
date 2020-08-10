@@ -25,9 +25,12 @@ def create_hparams(hparams_string=None, verbose=False):
         # Data Parameters             #
         ################################
         load_mel_from_disk=False,
-        training_files='filelists/ljs_audio_text_train_filelist.txt',
-        validation_files='filelists/ljs_audio_text_val_filelist.txt',
-        text_cleaners=['english_cleaners'],
+        #training_files='filelists/ljs_audio_text_train_filelist.txt',
+        #validation_files='filelists/ljs_audio_text_val_filelist.txt',
+        #text_cleaners=['english_cleaners'],
+        training_files='/content/drive/My Drive/tacotron_baseline/filelists/homo_sapiens_train.txt'
+        validation_files='/content/drive/My Drive/tacotron_baseline/filelists/homo_sapiens_val.txt'
+        text_cleaners=['basic_cleaners'],
 
         ################################
         # Audio Parameters             #
@@ -81,7 +84,7 @@ def create_hparams(hparams_string=None, verbose=False):
         learning_rate=1e-3,
         weight_decay=1e-6,
         grad_clip_thresh=1.0,
-        batch_size=64,
+        batch_size=16,
         mask_padding=True  # set model's padded outputs to padded values
     )
 
