@@ -28,8 +28,8 @@ def create_hparams(hparams_string=None, verbose=False):
         #training_files='filelists/ljs_audio_text_train_filelist.txt',
         #validation_files='filelists/ljs_audio_text_val_filelist.txt',
         #text_cleaners=['english_cleaners'],
-        training_files='/content/drive/My Drive/tacotron_baseline/filelists/homo_sapiens_train.txt'
-        validation_files='/content/drive/My Drive/tacotron_baseline/filelists/homo_sapiens_val.txt'
+        training_files='/content/drive/My Drive/tacotron_baseline/filelists/homo_sapiens_train.txt',
+        validation_files='/content/drive/My Drive/tacotron_baseline/filelists/homo_sapiens_val.txt',
         text_cleaners=['basic_cleaners'],
 
         ################################
