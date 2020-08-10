@@ -3,6 +3,7 @@ import time
 import argparse
 import math
 from numpy import finfo
+import numpy as np
 
 import torch
 #from distributed import apply_gradient_allreduce
