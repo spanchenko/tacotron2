@@ -5,7 +5,7 @@ import math
 from numpy import finfo
 
 import torch
-from distributed import apply_gradient_allreduce
+#from distributed import apply_gradient_allreduce
 import torch.distributed as dist
 from torch.utils.data.distributed import DistributedSampler
 from torch.utils.data import DataLoader
@@ -75,8 +75,8 @@ def load_model(hparams):
     if hparams.fp16_run:
         model.decoder.attention_layer.score_mask_value = finfo('float16').min
 
-    if hparams.distributed_run:
-        model = apply_gradient_allreduce(model)
+    #if hparams.distributed_run:
+    #    model = apply_gradient_allreduce(model)
 
     return model
 
@@ -175,8 +175,8 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
         model, optimizer = amp.initialize(
             model, optimizer, opt_level='O2')
 
-    if hparams.distributed_run:
-        model = apply_gradient_allreduce(model)
+    #if hparams.distributed_run:
+    #    model = apply_gradient_allreduce(model)
 
     criterion = Tacotron2Loss()
 
