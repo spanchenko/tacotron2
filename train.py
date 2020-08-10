@@ -3,7 +3,6 @@ import time
 import argparse
 import math
 from numpy import finfo
-import numpy as np
 
 import torch
 #from distributed import apply_gradient_allreduce
@@ -132,8 +131,6 @@ def validate(model, criterion, valset, iteration, batch_size, n_gpus,
         val_loss = 0.0
         for i, batch in enumerate(val_loader):
             x, y = model.parse_batch(batch)
-            if not np.all(x[1].cpu().numpy()):
-                print(x)
             y_pred = model(x)
             loss = criterion(y_pred, y)
             if distributed_run:
